@@ -274,11 +274,21 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // Diberikan variabel `nomorAntrean` = 15.
 // Lakukan proses pemanggilan berikutnya dengan increment (`++`), lalu tampilkan nilainya.
 // Setelah itu, karena ada 1 orang yang membatalkan nomor antrean, lakukan decrement (`--`), lalu tampilkan nilainya!
+let nomorAntrean = 15;
+
+console.log(`Nomor antrean saat ini: ${++nomorAntrean}`); // 16
+console.log(`Nomor antrean saat ini: ${--nomorAntrean}`); // 15
 
 // Soal 5.2 (Studi Kasus: Pengecekan KKM Ujian - if - else):
 // Diberikan variabel `nilaiUjian` = 73.
 // Jika nilai minimal 75, tampilkan ke console: "Tuntas: Selamat, Anda Lulus KKM!".
 // Selain itu, tampilkan: "Belum Tuntas: Silakan mengikuti remedial pekan depan!".
+let nilaiUjian = 73;
+if (nilaiUjian >= 75) {
+    console.log("Tuntas: Selamat, Anda Lulus KKM!");
+} else {
+    console.log("Belum Tuntas: Silakan mengikuti remedial pekan depan!");
+}
 
 // Soal 5.3 (Studi Kasus: Klasifikasi Nilai Raport - if - else if - else):
 // Diberikan variabel `skorAkhir` = 83.
@@ -288,6 +298,16 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // - Jika skor >= 70, predikat = "C (Cukup)"
 // - Selain itu, predikat = "D (Perlu Bimbingan)"
 // Cetak predikat akhir ke console!
+let skorAkhir = 83;
+if (skorAkhir >= 90) {
+    console.log("Predikat: A (Sangat Baik)");
+} else if (skorAkhir >= 80) {
+    console.log("Predikat: B (Baik)");
+} else if (skorAkhir >= 70) {
+    console.log("Predikat: C (Cukup)");
+} else {
+    console.log("Predikat: D (Perlu Bimbingan)");
+}
 
 // Soal 5.4 (Studi Kasus: Sensor Pendeteksi Angka - Ganjil, Genap, atau Nol):
 // Diberikan variabel `bilangan` = 14.
@@ -295,6 +315,14 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // - Jika bilangan === 0, cetak "Bilangan Nol"
 // - Jika sisa bagi bilangan dengan 2 adalah 0 (`bilangan % 2 === 0`), cetak "Bilangan Genap"
 // - Selain itu, cetak "Bilangan Ganjil"!
+let bilangan = 14;
+if (bilangan === 0) {
+    console.log("Bilangan Nol");
+} else if (bilangan % 2 === 0) {
+    console.log("Bilangan Genap");
+} else {
+    console.log("Bilangan Ganjil");
+}   
 
 // Soal 5.5 (Studi Kasus: Menu Hari Piket Asrama - switch - case):
 // Diberikan variabel `nomorHari` = 3 (1 = Senin, 2 = Selasa, 3 = Rabu, 4 = Kamis, 5 = Jum'at, 6 = Sabtu, 7 = Ahad).
@@ -303,6 +331,24 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // - case 6: Tampilkan "Hari Olahraga dan Kerja Bakti Lingkungan"
 // - case 7: Tampilkan "Hari Kunjungan Orang Tua dan Istirahat"
 // - default: Tampilkan "Nomor hari tidak valid (masukkan angka 1 - 7)"!
+let nomorHari = 3;
+switch (nomorHari) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        console.log("Hari Sekolah dan Kegiatan Belajar");
+        break;
+    case 6:
+        console.log("Hari Olahraga dan Kerja Bakti Lingkungan");
+        break;
+    case 7:
+        console.log("Hari Kunjungan Orang Tua dan Istirahat");
+        break;
+    default:
+        console.log("Nomor hari tidak valid (masukkan angka 1 - 7)");
+}
 
 // Soal 5.6 (Studi Kasus: Pengelompokan Kategori Makanan Sehat - switch case grouping):
 // Diberikan variabel `pilihanMakanan` = "salad".
@@ -310,7 +356,19 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // - Jika "salad" atau "jus buah" -> Tampilkan: "Pilihan Sangat Sehat: Kaya Nutrisi dan Vitamin!"
 // - Jika "burger" atau "gorengan" -> Tampilkan: "Pilihan Kurang Sehat: Batasi konsumsi minyak dan lemak!"
 // - default -> Tampilkan: "Menu makanan tidak terdaftar di database kantin sehat."
-
+let pilihanMakanan = "salad";
+switch (pilihanMakanan) {
+    case "salad":
+    case "jus buah":
+        console.log("Pilihan Sangat Sehat: Kaya Nutrisi dan Vitamin!");
+        break;
+    case "burger":
+    case "gorengan":
+        console.log("Pilihan Kurang Sehat: Batasi konsumsi minyak dan lemak!");
+        break;
+    default:
+        console.log("Menu makanan tidak terdaftar di database kantin sehat.");
+}
 
 // ==============================================================================
 // BAGIAN 6: PERTEMUAN 6 (Perulangan for, while, do-while, & Percabangan di dalam Loop)
@@ -319,11 +377,21 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // Soal 6.1 (Studi Kasus: Hitung Mundur Peluncuran Roket Sains - for loop mundur):
 // Gunakan for loop untuk menampilkan hitungan mundur dari angka 10 sampai 1 ke console.
 // Tepat setelah perulangan selesai, tampilkan pesan: "Roket Sains Berhasil Meluncur ke Angkasa!"!
+let countdown = 10;
+for (let i = countdown; i >= 1; i--) {
+    console.log(i);
+}
+console.log("Roket Sains Berhasil Meluncur ke Angkasa!");
 
 // Soal 6.2 (Studi Kasus: Pemanggilan Barisan Siswa Bernomor Ganjil - for loop & modulus):
 // Guru memanggil siswa dengan nomor urut 1 sampai 15. Namun, guru hanya ingin memanggil siswa yang memiliki nomor urut GANJIL.
 // Gunakan for loop dan seleksi kondisi modulus (i % 2 !== 0) untuk menampilkan:
 // "Memanggil siswa nomor urut: [i]" ke console!
+for (let i = 1; i <= 15; i++) {
+    if (i % 2 !== 0) {
+        console.log(`Memanggil siswa nomor urut: ${i}`);
+    }
+}
 
 // Soal 6.3 (Studi Kasus: Inspeksi Armada Mobil Sekolah - for loop dengan kondisi bertingkat):
 // Sekolah memiliki 10 mobil dinas (nomor 1 sampai 10).
@@ -331,6 +399,15 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // - Jika mobil nomor 4: Tampilkan "Mobil 4 sedang berada di bengkel untuk servis rutin"
 // - Jika mobil nomor 8: Tampilkan "Mobil 8 sedang dipinjam untuk keperluan dinas luar"
 // - Selain itu: Tampilkan "Mobil [nomor] siap beroperasi mengantar santri"!
+for (let i = 1; i <= 10; i++) {
+    if (i === 4) {
+        console.log("Mobil 4 sedang berada di bengkel untuk servis rutin");
+    } else if (i === 8) {
+        console.log("Mobil 8 sedang dipinjam untuk keperluan dinas luar");
+    } else {
+        console.log(`Mobil ${i} siap beroperasi mengantar santri`);
+    }
+}
 
 // Soal 6.4 (Studi Kasus: Pengisian Galon Air Asrama - while loop):
 // Volume awal air galon adalah 0 liter (variabel `volumeAir = 0`).
@@ -338,6 +415,12 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // Gunakan `while` loop untuk mengisi galon liter demi liter (tambah 1 setiap putaran) selama `volumeAir < 5`.
 // Cetak setiap penambahan liter ke console: "Mengisi air... saat ini volume: [volumeAir] Liter".
 // Di luar loop, cetak: "Galon sudah terisi penuh!"!
+let volumeAir = 0;
+while (volumeAir < 5) {
+    volumeAir++;
+    console.log(`Mengisi air... saat ini volume: ${volumeAir} Liter`);
+}
+console.log("Galon sudah terisi penuh!");
 
 // Soal 6.5 (Studi Kasus: Pemanasan Mesin Generator Listrik - do...while loop):
 // Generator cadangan asrama harus melakukan pemanasan mesin minimal 1 kali putaran uji coba meskipun indikator `daya` awalnya bernilai 10.
@@ -345,6 +428,11 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // Gunakan `do...while` loop untuk mencetak "Mesin generator berhasil diuji pada putaran daya ke-[daya]" lalu naikkan daya (daya++),
 // dengan kondisi while `daya < 10` (kondisi langsung bernilai false).
 // Buktikan bahwa blok di dalam do tetap dijalankan minimal 1 kali!
+let daya = 10;
+do {
+    console.log(`Mesin generator berhasil diuji pada putaran daya ke-${daya}`);
+    daya++;
+} while (daya < 10);
 
 
 // ==============================================================================
@@ -356,6 +444,10 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // Ketika fungsi dipanggil, fungsi tersebut akan mencetak pesan ke console:
 // "Teng! Teng! Teng! Waktu belajar di kelas 10A telah dimulai. Harap tertib!"
 // Panggil function tersebut 1 kali untuk mengujinya!
+function bunyikanBelSekolah() {
+    console.log("Teng! Teng! Teng! Waktu belajar di kelas 10A telah dimulai. Harap tertib!");
+}
+bunyikanBelSekolah();
 
 // Soal 7.2 (Studi Kasus: Mesin Kasir Mini - Function Parameter Aritmatika):
 // Buat 4 buah function yang masing-masing menerima dua parameter (a, b):
@@ -365,6 +457,27 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // 4. `bagi(a, b)`   -> mencetak hasil pembagian a / b
 // Ujilah masing-masing function tersebut dengan angka contoh bebas (misal a = 20, b = 5)!
 
+function tambah(a, b) {
+    console.log(a + b);
+}
+
+function kurang(a, b) {
+    console.log(a - b);
+}
+
+function kali(a, b) {
+    console.log(a * b);
+}
+
+function bagi(a, b) {
+    console.log(a / b);
+}
+
+tambah(20, 5);
+kurang(20, 5);
+kali(20, 5);
+bagi(20, 5);
+
 // Soal 7.3 (Studi Kasus: Putaran Lari Pagi - Function dengan Default Parameter):
 // Buat sebuah function bernama `lariKelilingLapangan(jumlahPutaran = 3)`.
 // Fungsi ini memiliki default parameter `jumlahPutaran` bernilai 3 jika tidak ada argumen yang dikirimkan.
@@ -372,6 +485,16 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // Uji fungsi ini dua kali:
 // 1. Panggil `lariKelilingLapangan()` tanpa mengirimkan argumen (akan menjalankan default 3 putaran).
 // 2. Panggil `lariKelilingLapangan(5)` dengan mengirimkan argumen 5 putaran!
+function lariKelilingLapangan(jumlahPutaran = 3) {
+    for (let i = 1; i <= jumlahPutaran; i++) {
+        console.log(`Lari putaran ke-${i} selesai!`);
+    }
+}
+
+lariKelilingLapangan();
+
+lariKelilingLapangan(5);
+
 
 // Soal 7.4 (Studi Kasus: Konsultan Desain Lapangan - Function Rumus Bangun Datar):
 // Buat dua buah function perhitungan bangun datar:
@@ -379,6 +502,19 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // 2. `hitungLuasSegitiga(alas, tinggi)`: Menghitung luas segitiga ((alas * tinggi) / 2), lalu cetak hasilnya ke console!
 // Uji function persegi panjang dengan panjang = 10 dan lebar = 6.
 // Uji function segitiga dengan alas = 12 dan tinggi = 8!
+// Function menghitung luas persegi panjang
+function hitungLuasPersegiPanjang(panjang, lebar) {
+    let luas = panjang * lebar;
+    console.log(`Luas persegi panjang: ${luas}`);
+}
+
+function hitungLuasSegitiga(alas, tinggi) {
+    let luas = (alas * tinggi) / 2;
+    console.log(`Luas segitiga: ${luas}`);
+}
+hitungLuasPersegiPanjang(10, 6);
+
+hitungLuasSegitiga(12, 8);
 
 // Soal 7.5 (Studi Kasus Terpadu: Program Kasir Diskon Koperasi Sekolah):
 // Buat sebuah function terpadu bernama `hitungTotalKoperasi(namaPelanggan, totalBelanja, isMember)`.
@@ -391,6 +527,22 @@ console.log(`Apakah Ahmad berhak menerima beasiswa? ${berhakBeasiswa}`); // true
 // Uji fungsi dengan 2 skenario:
 // 1. hitungTotalKoperasi("Azzam", 120000, true)
 // 2. hitungTotalKoperasi("Baim", 80000, false)
+function hitungTotalKoperasi(namaPelanggan, totalBelanja, isMember) {
+    let totalBayar;
+
+    if (isMember === true && totalBelanja >= 100000) {
+        totalBayar = totalBelanja * 0.85;
+    } else if (isMember === true && totalBelanja < 100000) {
+        totalBayar = totalBelanja * 0.95;
+    } else {
+        totalBayar = totalBelanja;
+    }
+
+    console.log(`Pelanggan: ${namaPelanggan} | Member: ${isMember} | Total Akhir: Rp ${totalBayar}`);
+}
+
+hitungTotalKoperasi("Azzam", 120000, true);
+hitungTotalKoperasi("Baim", 80000, false);
 
 
 // ==============================================================================
